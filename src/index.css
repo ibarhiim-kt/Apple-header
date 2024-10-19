@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.watchImage{
+    
+    height: 100vh;
+    background-image: url('./Components/assets/apple-watch.jpg');
+    background-size: cover;
+    background-position: center;
+    
+  }
+
+.blur{
+    background: rgba(0, 0, 0, .4);
+    backdrop-filter: blur(20px);
+}
+
+.bb{
+    max-height: 800px;
+    transition: max-height 5s;
+}
