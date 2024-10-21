@@ -137,7 +137,7 @@ const Header = () => {
               onMouseEnter={() => setHoveredIndex(index)}              
               className="relative text-[12px]"
             >
-              <a href="#" className="hover:text-[#ffffff]">
+              <a href="#" className="hover:text-[#ffffff] font-SfProTextUltralight -leading-[0.01px]">
                 {item.name}
               </a>              
             </li>

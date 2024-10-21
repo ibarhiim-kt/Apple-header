@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'SF-Pro-Text-Light'; /* Replace with your font name */
+    src: url('../public/fonts/SF-Pro-Text-Light.otf') format('woff2');         
+    font-weight: normal; /* Adjust as necessary */
+    font-style: normal;  /* Adjust as necessary */
+  }
+  @font-face {
+    font-family: 'SF-Pro-Text-Regular'; /* Replace with your font name */
+    src: url('../public/fonts/SF-Pro-Text-Regular.otf') format('woff');
+    font-weight: normal; /* Adjust as necessary */
+    font-style: normal;  /* Adjust as necessary */
+  }
+  @font-face {
+    font-family: 'SF-Pro-Text-Ultralight'; /* Replace with your font name */
+    src: url('../public/fonts/SF-Pro-Text-Ultralight.otf') format('woff');
+    font-weight: normal; /* Adjust as necessary */
+    font-style: normal;  /* Adjust as necessary */
+  }
 .watchImage{
     
     height: 100vh;

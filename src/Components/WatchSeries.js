@@ -3,7 +3,7 @@ import React from 'react'
 import appleLogoBlack from './assets/appleLogoBlack.svg'
 export default function WatchSeries() {
   return (
-    <div className='watchImage flex flex-col items-center'>
+    <div className='watchImage flex flex-col items-center font-SfProText'>
     <div className='max-w-5xl mx-auto pt-[50px]'>
      <div className='flex items-center gap-1 justify-center'>
         <img src={appleLogoBlack} alt="black apple logo" width={40} height={40}/>
