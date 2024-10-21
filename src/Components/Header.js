@@ -101,17 +101,18 @@ const Header = () => {
 
   useEffect(() => {
     if (hoveredIndex !== null && contentRef.current) {
-      const newHeight = contentRef.current.scrollHeight + 30; // Adjusting the height dynamically with pb-[84px]
+      const newHeight = contentRef.current.scrollHeight + 30; 
       setDynamicHeight(newHeight);
     } else {
-      setDynamicHeight(44); // Reset to default header height when no link is hovered
+      setDynamicHeight(44); 
     }
-  }, [hoveredIndex]); // Recalculate height whenever hoveredIndex changes
+  }, [hoveredIndex]); 
 
   const headerAnimation = useSpring({
     height: dynamicHeight,
-    backgroundColor: '#161617',
-    config: { tension: 200, friction: 15, clamp:true },
+    backgroundColor: '#1D1D1F',
+    config: { tension: 200,  
+      friction: 15, clamp:true },
   });
   
 
