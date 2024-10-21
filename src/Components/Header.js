@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React, {useRef, useEffect, useState } from 'react';
 import { useSpring, animated } from '@react-spring/web';
 import appleLogo from './assets/appleLogo.svg'
 import searchIcon from './assets/searchIcon.svg'
 import bagIcon from './assets/bagIcon.svg'
 
 const Header = () => {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const menuItems = [
     {
@@ -96,11 +95,23 @@ const Header = () => {
       },     
     
   ];
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const contentRef = useRef(null);
+  const [dynamicHeight, setDynamicHeight] = useState(44);
+
+  useEffect(() => {
+    if (hoveredIndex !== null && contentRef.current) {
+      const newHeight = contentRef.current.scrollHeight + 30; // Adjusting the height dynamically with pb-[84px]
+      setDynamicHeight(newHeight);
+    } else {
+      setDynamicHeight(44); // Reset to default header height when no link is hovered
+    }
+  }, [hoveredIndex]); // Recalculate height whenever hoveredIndex changes
 
   const headerAnimation = useSpring({
-    // maxHeight: hoveredIndex !== null ? '800px' : '44px', 
-    backgroundColor: '#333336',
-    config: { tension: 1000000, friction: 100 },
+    height: dynamicHeight,
+    backgroundColor: '#161617',
+    config: { tension: 120, friction: 20 },
   });
   
 
@@ -110,11 +121,11 @@ const Header = () => {
         <div className='blur w-full h-full fixed top-0 right-0 bottom-0 left-0 z-20'></div>
     ):('')}
     <animated.header
-    //   style={headerAnimation}
-      className={`absolute z-50 bg-[#333336] transition-max-h ease-in-out duration-[2000ms] w-full accordion-content text-white accordion-content overflow-hidden ${hoveredIndex!==null?'max-h-[800px]':'h-[44px]'}`} 
+      style={{...headerAnimation}}
+    // ${hoveredIndex!==null?'trigger':'h-[44px]'}
+      className={`absolute z-50 bg-[#333336] w-full text-white accordion-content overflow-hidden `} 
       onMouseLeave={() => setHoveredIndex(null)}
-    >
-        
+    >        
       <nav className="container mx-auto px-[22px] max-w-5xl text-[#E8E8ED]">
         
         <ul className="flex justify-between items-center">
@@ -134,7 +145,7 @@ const Header = () => {
            <img src={bagIcon} alt="bag icon" className='cursor-pointer' onMouseEnter={() => setHoveredIndex(null)}/>
         </ul>       
       </nav>
-      <div className='max-w-5xl mx-auto pl-[22px]'> 
+      <div className='max-w-5xl mx-auto pl-[22px]' ref={contentRef}> 
       {hoveredIndex !== null && (
         <Dropdown columns={menuItems[hoveredIndex].columns} />
       )}       
@@ -159,11 +170,11 @@ const Dropdown = ({ columns }) => {
     >
       {columns.map((column, index) => (
         <div key={index}>
-          <p className="text-[12px] text-[#86868B] mb-[6px]">{column.title}</p>
+          <p className="text-[12px] text-[#86868B] mb-4">{column.title}</p>
           <ul>
             {column.links.map((link, linkIndex) => (
               <li key={linkIndex}>
-                <a href="#" className={`text-white font-semibold ${index===0?'text-[24px] pt-[9px]':'text-[12px]'}`}>
+                <a href="#" className={`block leading-[100%] text-white font-semibold ${index===0?'text-[24px] pb-[14px] ':'text-[12px] pb-3'}`}>
                   {link}
                 </a>
               </li>
