@@ -111,7 +111,7 @@ const Header = () => {
   const headerAnimation = useSpring({
     height: dynamicHeight,
     backgroundColor: '#161617',
-    config: { tension: 120, friction: 20 },
+    config: { tension: 200, friction: 15, clamp:true },
   });
   
 
