@@ -139,7 +139,7 @@ const Header = () => {
             >
               <a href="#" className="hover:text-[#ffffff] font-SfProTextUltralight -leading-[0.01px]">
                 {item.name}
-              </a>              
+              </a>           
             </li>
           ))}
            <img src={searchIcon} alt="search icon" className='cursor-pointer' onMouseEnter={() => setHoveredIndex(null)}/>
