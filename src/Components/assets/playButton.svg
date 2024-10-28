@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="control-centered-small-icon">
+									<g class="control-icon-pause">
+										<rect width="4.5" height="14" x="3.75" y="3" rx="1.5"></rect>
+										<rect width="4.5" height="14" x="11.75" y="3" rx="1.5"></rect>
+									</g>
+									<path class="control-icon-play" d="M5 15.25V4.77a1.44 1.44 0 0 1 1.44-1.62 1.86 1.86 0 0 1 1.11.31l8.53 5c.76.44 1.17.8 1.17 1.51s-.41 1.07-1.17 1.51l-8.53 5a1.86 1.86 0 0 1-1.11.31A1.42 1.42 0 0 1 5 15.25Z"></path>
+								</svg>

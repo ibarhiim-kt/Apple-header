@@ -7,6 +7,8 @@ module.exports = {
         SfProTextLight:['SF-Pro-Text-light'],
         SfProTextRegular:['SF-Pro-Text-Regular'],
         SfProTextUltralight:['SF-Pro-Text-Ultralight'],
+        SfProDisplayBold:['SFPRODISPLAYBOLD'],
+        SfProDisplayMedium:['SFPRODISPLAYMEDIUM']
       }
     },
   },

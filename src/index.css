@@ -20,16 +20,37 @@
     font-weight: normal; /* Adjust as necessary */
     font-style: normal;  /* Adjust as necessary */
   }
-.watchImage{
-    
+  @font-face {
+    font-family: 'SFPRODISPLAYBOLD'; /* Replace with your font name */
+    src: url('../public/fonts/SF-Pro-Display/SFPRODISPLAYBOLD.OTF') format('woff');
+    font-weight: normal; /* Adjust as necessary */
+    font-style: normal;  /* Adjust as necessary */
+  }
+  @font-face {
+    font-family: 'SFPRODISPLAYMEDIUM'; /* Replace with your font name */
+    src: url('../public/fonts/SF-Pro-Display/SFPRODISPLAYMEDIUM.OTF') format('woff');
+    font-weight: normal; /* Adjust as necessary */
+    font-style: normal;  /* Adjust as necessary */
+  }
+.watchImage{    
     height: 100vh;
     background-image: url('./Components/assets/apple-watch.jpg');
     background-size: cover;
-    background-position: center;
-    
+    background-position: center;    
   }
 
 .blur{
     background: rgba(0, 0, 0, .4);
     backdrop-filter: blur(20px);
+}
+.slick-slide{
+  display: block !important;
+}
+.slick-slide > div {
+  display: flex;
+  justify-content: center;  
+}
+
+.slick-list {
+  overflow: visible; 
 }
