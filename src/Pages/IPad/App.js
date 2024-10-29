@@ -1,9 +1,12 @@
 import Hero from "../../Components/common/Hero";
 import NavItems from "../../Components/common/NavItems";
-import { AppleItems,AppleSliderContent, IPadModelComparison } from "../../constants";
+import { AppleItems,AppleSliderContent, IPadModelComparison,AppleBestForIpad } from "../../constants";
 
 import AppleSlider from "../../Components/common/AppleSlider";
 import ExploreLineup from "../../Components/common/ExploreLineup";
+import IpadEssentials from "./IpadEssentials";
+import AppleBestPlace from "../../Components/common/AppleBestPlace";
+import SignificantOthers from "../../Components/common/SignificantOthers";
 
 function App() {
   return (
@@ -22,7 +25,10 @@ function App() {
       <AppleSlider title="Get To know iPad." items={AppleSliderContent}/>
       <div className="bg-[#F5F5F7]">
       <ExploreLineup content={IPadModelComparison}/>
+      <IpadEssentials/>
+      <AppleBestPlace items={AppleBestForIpad}/>
       </div>
+      {/* <SignificantOthers/> */}
     </div>
   );
 }

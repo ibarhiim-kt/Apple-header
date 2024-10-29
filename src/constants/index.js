@@ -35,6 +35,13 @@ import a17Chip from '../../src/Components/assets/a17Chip.png'
 import iPadMiniWideCamera from '../../src/Components/assets/iPadMiniWideCamera.png'
 import iPadMiniFrontCamera from '../../src/Components/assets/iPadMiniFrontCamera.png'
 import iPadMiniKeyboard from '../../src/Components/assets/iPadMiniKeyboard.png'
+import interestFree from '../../src/Components/assets/interestFree.png'
+import appleTrade from '../../src/Components/assets/appleTrade.png'
+import flexibleDelivery from '../../src/Components/assets/flexibleDelivery.png'
+import personalizedIpad from '../../src/Components/assets/personalizedIpad.png'
+import shopLive from '../../src/Components/assets/shopLive.png'
+import personalSetup from '../../src/Components/assets/personalSetup.png'
+import shoppingExperience from '../../src/Components/assets/shoppingExperience.png'
 
 export const AppleItems = [
     {
@@ -215,6 +222,49 @@ export const IPadModelComparison = [
         keyboardName: "Supports Bluetooth keyboards",
         width:"167px",
         height:"340px"
+    },    
+]
+export const AppleBestForIpad = [
+    {
+        id:0,
+        img:interestFree,
+        reason:"Pay over time, interest-free.",
+        description:"When you choose to check out with Apple Card Monthly Installments."
     },
-    
+    {
+        id:1,
+        img:appleTrade,
+        reason:"Save up to $520 with Apple Trade In.",
+        description:"Get credit toward your next iPad when you trade in an eligible device."
+    },
+    {
+        id:2,
+        img:flexibleDelivery,
+        reason:"Get flexible delivery and easy pickup.",
+        description:"Choose two-hour delivery from an Apple Store, free delivery, or easy pickup options."
+    },
+    {
+        id:3,
+        img:personalizedIpad,
+        reason:"Personalized your iPad for free.",
+        description:"Engrave your new iPad with a mix of emoji, names, initials and numbers."
+    },
+    {
+        id:4,
+        img:shopLive,
+        reason:"Shop live with a Specialist",
+        description:"Let us guide you live over video and answer all of your questions."
+    },
+    {
+        id:5,
+        img:personalSetup,
+        reason:"Meet your new iPad with Personal Setup",
+        description:"Jump into online sessions with a Specialist to set up your iPad and discover new features."
+    },
+    {
+        id:6,
+        img:shoppingExperience,
+        reason:"Explore a shopping experience designed around you.",
+        description:"Use the Apple Store app to get a more personal way to shop."
+    }
 ]
