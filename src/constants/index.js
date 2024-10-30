@@ -17,7 +17,6 @@ import ApplePencil from '../../src/Components/assets/applePencil.jpg';
 import iPadOsApps from '../../src/Components/assets/iPadOsApps.jpg';
 import iPadPro from '../../src/Components/assets/ipadProPng.png'
 import m4Chip from '../../src/Components/assets/m4Chip.png'
-import appleIntelligence from '../../src/Components/assets/appleIntelligencePng.png'
 import tewelvempWideCamera from '../../src/Components/assets/12mpCamera.png'
 import tewelvempFrontCamera from '../../src/Components/assets/12mpFrontCamera.png'
 import pencil from '../../src/Components/assets/applePencilPng.png'
@@ -42,6 +41,9 @@ import personalizedIpad from '../../src/Components/assets/personalizedIpad.png'
 import shopLive from '../../src/Components/assets/shopLive.png'
 import personalSetup from '../../src/Components/assets/personalSetup.png'
 import shoppingExperience from '../../src/Components/assets/shoppingExperience.png'
+import significantIpadIphone from '../../src/Components/assets/significant_ipad_iphone.jpg'
+import secondaryAccordionImg from '../Components/assets/secondaryAccordionImg.jpg'
+import tertiaryAccordionImg from '../Components/assets/tertiaryAccordionImg.jpg'
 
 export const AppleItems = [
     {
@@ -266,5 +268,29 @@ export const AppleBestForIpad = [
         img:shoppingExperience,
         reason:"Explore a shopping experience designed around you.",
         description:"Use the Apple Store app to get a more personal way to shop."
+    }
+]
+
+export const Significant = [
+    {
+        accordionTitle:"iPad and iPhone",
+        description:"iPad is perfect for taking the content you capture on iPhone and bringing it to life on an immersive canvas. You can shoot videos and photos on your iPhone and use the large display of your iPad to edit, add animations, and more. You can also pick up wherever you left off with Handoff.",
+        img:significantIpadIphone
+    },
+    {
+        accordionTitle:"iPad and Mac",
+        description:"iPad and Mac are designed to work together to form the ultimate creative setup. Sketch on your iPad and have it appear instantly on your Mac with Sidecar. Then use your iPad for drawing or editing with Apple Pencil or as a second display. Extend your workflow to new places, and when you return to your desk, Universal Control allows you to use one mouse or trackpad seamlessly across both devices.",
+        img:secondaryAccordionImg
+    },
+    {
+        accordionTitle:"iPad and Apple Watch",
+        description:"iPad is a great way to optimize your workouts while tracking your progress on Apple Watch. See personal metrics from Apple Watch integrated on the screen of your iPad in real time. The sensors in Apple Watch combine with advanced algorithms to provide data that keeps you motivated. And see it all come together on your Health app on iPad.",
+        img:tertiaryAccordionImg
+    },
+]
+
+export const IpadLinks = [
+    {
+        title:'Explore iPad', exploreItems:["Explore All iPad","iPad Pro","iPad Air","iPad","iPad mini","Apple Pencil","Keyboards"], compareIpad:'Compare iPad', whyiPad:'Why ipad'
     }
 ]

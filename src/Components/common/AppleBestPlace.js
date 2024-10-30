@@ -34,10 +34,10 @@ export default function AppleBestPlace({items}) {
         </div>
       </div>
       <div className='max-w-[1680px] mx-auto w-[87.5vw]'>
-      <div className={`ml-2 max-w-[1680px] w-[83vw]`}>
+      <div className="ml-2 max-w-[1680px] w-[83vw]">
         <Slider ref={sliderRef} {...settings}>
           {items.map((el, index) => (
-            <div key={index} className="relative h-full rounded-[28px] pt-8 pl-8 pr-[77px] pb-[57px] bg-white mr-[22px] cursor-pointer slick-slide">
+            <div key={index} className="relative h-[324.6px] rounded-[28px] pt-8 pl-8 pr-[77px] pb-[57px] bg-white mr-[22px] cursor-pointer slick-slide">
               <img src={el.img} alt="" className="object-cover h-[56px]"/>
               <div>
                 <div className='max-w-[296px]'>

@@ -1,12 +1,15 @@
 import Hero from "../../Components/common/Hero";
 import NavItems from "../../Components/common/NavItems";
-import { AppleItems,AppleSliderContent, IPadModelComparison,AppleBestForIpad } from "../../constants";
+import { AppleItems,AppleSliderContent, IPadModelComparison,AppleBestForIpad, Significant, IpadLinks } from "../../constants";
 
 import AppleSlider from "../../Components/common/AppleSlider";
 import ExploreLineup from "../../Components/common/ExploreLineup";
 import IpadEssentials from "./IpadEssentials";
 import AppleBestPlace from "../../Components/common/AppleBestPlace";
 import SignificantOthers from "../../Components/common/SignificantOthers";
+import Links from "../../Components/common/Links";
+import Detail from "./Detail";
+
 
 function App() {
   return (
@@ -28,7 +31,9 @@ function App() {
       <IpadEssentials/>
       <AppleBestPlace items={AppleBestForIpad}/>
       </div>
-      {/* <SignificantOthers/> */}
+      <SignificantOthers items={Significant}/>
+      <Links PrimaryColLinks={IpadLinks}/>
+      <Detail/>
     </div>
   );
 }

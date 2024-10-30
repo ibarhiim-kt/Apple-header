@@ -9,10 +9,7 @@ module.exports = {
         SfProTextUltralight:['SF-Pro-Text-Ultralight'],
         SfProDisplayBold:['SFPRODISPLAYBOLD'],
         SfProDisplayMedium:['SFPRODISPLAYMEDIUM']
-      },
-      gridTemplateColumns: {
-        'customGridCols': 'calc(350px + 120px * 2) 1fr',
-      },
+      },      
     },
   },
   plugins: [],

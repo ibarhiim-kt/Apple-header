@@ -122,8 +122,7 @@ const Header = () => {
         <div className='blur w-full h-full fixed top-0 right-0 bottom-0 left-0 z-20'></div>
     ):('')}
     <animated.header
-      style={{...headerAnimation}}
-    // ${hoveredIndex!==null?'trigger':'h-[44px]'}
+      style={{...headerAnimation}}    
       className={`absolute z-50 bg-[#333336] w-full text-white accordion-content overflow-hidden `} 
       onMouseLeave={() => setHoveredIndex(null)}
     >        
@@ -139,7 +138,7 @@ const Header = () => {
             >
               <a href="#" className="hover:text-[#ffffff] font-SfProTextUltralight -leading-[0.01px]">
                 {item.name}
-              </a>           
+              </a>        
             </li>
           ))}
            <img src={searchIcon} alt="search icon" className='cursor-pointer' onMouseEnter={() => setHoveredIndex(null)}/>
