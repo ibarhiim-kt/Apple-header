@@ -30,14 +30,14 @@ function App() {
     
   } heroVideo={HeroVideo}/>
       <AppleSlider title="Get To know iPad." items={AppleSliderContent}/>
-      {/* <div className="bg-[#F5F5F7]">
+      <div className="bg-[#F5F5F7]">
       <ExploreLineup content={IPadModelComparison}/>
       <IpadEssentials/>
       <AppleBestPlace items={AppleBestForIpad}/>
-      </div> */}
-      {/* <SignificantOthers items={Significant}/> */}
-      {/* <Links PrimaryColLinks={IpadLinks}/> */}
-      {/* <Detail/>  */}
+      </div>
+      <SignificantOthers items={Significant}/>
+      <Links PrimaryColLinks={IpadLinks}/>
+      <Detail/> 
     </div>
   );
 }
