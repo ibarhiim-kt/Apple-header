@@ -38,7 +38,7 @@ export default function AppleSlider({title,items}) {
       <div className={`ml-2 max-w-[1680px] w-[83vw]`}>
         <Slider ref={sliderRef} {...settings}>
           {items.map((el, index) => (
-            <div key={index} className="h-[740px] mr-[22px] relative cursor-pointer slick-slide">
+            <div key={index} className="h-[740px] mr-[22px] relative cursor-pointer transform hover:scale-1016 transition duration-500">
               <img src={el.img} alt="" className="w-full h-full object-cover rounded-[28px] absolute z-10" />
               <div className='absolute p-8 z-50 text-white w-full h-full'>
                 <div>

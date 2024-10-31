@@ -59,7 +59,7 @@ export const AppleItems = [
         img:ipad
     },
     {
-        name:'iPad Mini',
+        name:'iPad mini',
         img:ipadMini
     },
     {

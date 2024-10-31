@@ -8,9 +8,15 @@ module.exports = {
         SfProTextRegular:['SF-Pro-Text-Regular'],
         SfProTextUltralight:['SF-Pro-Text-Ultralight'],
         SfProDisplayBold:['SFPRODISPLAYBOLD'],
-        SfProDisplayMedium:['SFPRODISPLAYMEDIUM']
+        SfProDisplayMedium:['SFPRODISPLAYMEDIUM'],
+        SfProDisplayRegular:['SFPRODISPLAYREGULAR'],
+        SFProIconsRegular:['SF-Pro-Icons-Regular.woff']
       },      
+      scale: {
+        '1016': '1.0161290323', // Custom scale
+      },
     },
+
   },
   plugins: [],
 }

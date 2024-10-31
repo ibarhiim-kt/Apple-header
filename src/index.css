@@ -32,6 +32,16 @@
     font-weight: normal; /* Adjust as necessary */
     font-style: normal;  /* Adjust as necessary */
   }
+  @font-face {
+    font-family: 'SFPRODISPLAYREGULAR'; /* Replace with your font name */
+    src: url('../public/fonts/SF-Pro-Display/SFPRODISPLAYREGULAR.OTF') format('woff');
+    font-weight: normal; /* Adjust as necessary */
+    font-style: normal;  /* Adjust as necessary */
+  }
+  @font-face {
+    font-family: 'SF-Pro-Icons-Regular';
+    src: url('../public/fonts/SF-Pro-Icons-Regular/SF-Pro-Icons-Regular.woff');
+  }
 .watchImage{    
     height: 100vh;
     background-image: url('./Components/assets/apple-watch.jpg');

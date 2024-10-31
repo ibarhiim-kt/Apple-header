@@ -1,8 +1,11 @@
 import React, {useRef, useEffect, useState } from 'react';
 import { useSpring, animated } from '@react-spring/web';
-import appleLogo from '../assets/appleLogo.svg'
-import searchIcon from '../assets/searchIcon.svg'
-import bagIcon from '../assets/bagIcon.svg'
+// import appleLogo from '../assets/appleLogo.svg'
+// import searchIcon from '../assets/searchIcon.svg'
+import appleBlackLogo from '../assets/appleLogoBlack.svg'
+import searchIconBlack from '../assets/searchIconBlack.svg'
+import bagIconBlack from '../assets/bagIconBlack.svg'
+// import bagIcon from '../assets/bagIcon.svg'
 
 const Header = () => {
 
@@ -110,7 +113,7 @@ const Header = () => {
 
   const headerAnimation = useSpring({
     height: dynamicHeight,
-    backgroundColor: '#1D1D1F',
+    backgroundColor: '#FAFAFC',
     config: { tension: 200,  
       friction: 15, clamp:true },
   });
@@ -123,26 +126,27 @@ const Header = () => {
     ):('')}
     <animated.header
       style={{...headerAnimation}}    
-      className={`absolute z-50 bg-[#333336] w-full text-white accordion-content overflow-hidden `} 
+      className={`absolute z-50 bg-[#FAFAFC] w-full text-white accordion-content overflow-hidden `} 
       onMouseLeave={() => setHoveredIndex(null)}
     >        
-      <nav className="container mx-auto px-[22px] max-w-5xl text-[#E8E8ED]">
+      <nav className="container mx-auto px-[22px] max-w-5xl text-[#000000CC]">
         
         <ul className="flex justify-between items-center">
-        <img src={appleLogo} alt="apple logo" className='cursor-pointer' onMouseEnter={() => setHoveredIndex(null)}/>
+        <img src={appleBlackLogo} alt="apple logo" className='cursor-pointer' onMouseEnter={() => setHoveredIndex(null)}/>
           {menuItems.map((item, index) => (
             <li
               key={index}
               onMouseEnter={() => setHoveredIndex(index)}              
               className="relative text-[12px]"
             >
-              <a href="#" className="hover:text-[#ffffff] font-SfProTextUltralight -leading-[0.01px]">
+              {/* hover:text-[#ffffff] */}
+              <a href="#" className=" text-[#000000CC] font-SfProTextRegular leading-[1] -tracking-[0.01em]">
                 {item.name}
               </a>        
             </li>
           ))}
-           <img src={searchIcon} alt="search icon" className='cursor-pointer' onMouseEnter={() => setHoveredIndex(null)}/>
-           <img src={bagIcon} alt="bag icon" className='cursor-pointer' onMouseEnter={() => setHoveredIndex(null)}/>
+           <img src={searchIconBlack} alt="search icon" className='cursor-pointer' onMouseEnter={() => setHoveredIndex(null)}/>
+           <img src={bagIconBlack} alt="bag icon" className='cursor-pointer' onMouseEnter={() => setHoveredIndex(null)}/>
         </ul>       
       </nav>
       <div className='max-w-5xl mx-auto pl-[22px]' ref={contentRef}> 
@@ -170,11 +174,11 @@ const Dropdown = ({ columns }) => {
     >
       {columns.map((column, index) => (
         <div key={index}>
-          <p className="text-[12px] text-[#86868B] mb-4">{column.title}</p>
+          <p className="text-[12px] text-[#000000CC] mb-4">{column.title}</p>
           <ul>
             {column.links.map((link, linkIndex) => (
               <li key={linkIndex}>
-                <a href="#" className={`block leading-[100%] text-white font-semibold ${index===0?'text-[24px] pb-[14px] ':'text-[12px] pb-3'}`}>
+                <a href="#" className={`block leading-[100%] text-[#000000CC] font-semibold ${index===0?'text-[24px] pb-[14px] ':'text-[12px] pb-3'}`}>
                   {link}
                 </a>
               </li>

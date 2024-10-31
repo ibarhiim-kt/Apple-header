@@ -1,128 +1,171 @@
 import React from 'react'
 import AppleLogo from '../assets/appleLogoBlack.svg'
+import RightArrowIcon from '../assets/rightArrowIcon.svg'
 
 export default function Footer() {
 
+    const headerElements = [
+        {shop:["Store","Mac","iPad","iPhone","Watch","Vision","Airpods","TV & Home","AirTag","Accessories","Gift Cards"]},
+        {appleWallet:["Wallet","Apple Card","Apple Pay","Apple Cash"]},
+        {account:["Manage You Apple Account","Apple Store Account","iCloud.com"]},
+        {entertainment:["Apple One","Apple TV+","Apple Music","Apple Arcade","Apple Fitness+","Apple News+","Apple Podcasts","Apple Books","Apple Store"]},
+        {appleStore:["Find a Store","Genius Bar","Today at Apple","Group Reservations","Apple Camp","Apple Store App","Certified Refurbished","Apple Trade In","Financing","Career Deals at Apple","Order Status","Shopping Help"]},
+        {forBussiness:["Apple and Bussiness","Shop for Bussiness"]},
+        {forEducation:["Apple and Education","Shop for k-12","Shop for College"]},
+        {forHealthcare:["Apple in Healthcare","Health on Apple Watch","Health Records on iPhone and iPad"]},
+        {forGovernment:["Shop for Government","Shop for Veterans and Military"]},
+        {appleValues:["Accessibility","Education","Enviornment","Inclusion and Diversity","Privacy","Racial Equity and Justice","Supply Chain"]},
+        {aboutApple:["Newsroom","Apple Leadership","Career Opportunities","Investors","Ethics & Compliance","Events","Contact Apple"]}
+    ]
+
+
   return (
-    <div className='bg-[#F5F5F7] text-[12px] font-SfProTextRegular'>
+    <div className='bg-[#F5F5F7] text-[12px] font-SfProTextLight'>
       <div className='max-w-[1024px] mx-auto px-[22px]'>
-        <div className='flex items-center py-[17px]'>
-            <img src={AppleLogo} alt="Apple Logo" />
-            <p className='pl-4'>iPad</p>
+        <div className='flex items-center py-[17px] gap-[11px]'>
+            <img src={AppleLogo} alt="Apple Logo" className=' w-[14px]'/>
+            <img src={RightArrowIcon} alt="" />
+            <p>iPad</p>
         </div>
         <div className='grid grid-cols-5'>
+            
             <div>
             <div>
                 <p className='mb-[9.6px] font-semibold'>Shop and Learn</p>
-                <p className='mb-[9.6px]'>Store</p>
-                <p className='mb-[9.6px]'>Mac</p>
-                <p className='mb-[9.6px]'>iPad</p>
-                <p className='mb-[9.6px]'>iPhone</p>
-                <p className='mb-[9.6px]'>Watch</p>
-                <p className='mb-[9.6px]'>Vision</p>
-                <p className='mb-[9.6px]'>Airpods</p>
-                <p className='mb-[9.6px]'>TV & Home</p>
-                <p className='mb-[9.6px]'>Air Tag</p>
-                <p className='mb-[9.6px]'>Accessories</p>
-                <p className='mb-[9.6px]'>Gift Cards</p>
+                {headerElements.map((el)=>(
+                    <div>
+                    {el.shop && el.shop.map((items)=>(
+                    <p className='mb-[9.6px] text-[#000000B8]'>{items}</p>                   
+                ))}
+                    </div> 
+                ))}                 
             </div>
             <div className='pt-6'>
             <p className='mb-[9.6px] font-semibold'>Apple Wallet</p>
-                <p className='mb-[9.6px]'>Wallet</p>
-                <p className='mb-[9.6px]'>Apple Card</p>
-                <p className='mb-[9.6px]'>Apple Pay</p>
-                <p className='mb-[9.6px]'>Apple Cash</p>
+            {headerElements.map((el)=>(
+                    <div>
+                    {el.appleWallet && el.appleWallet.map((items)=>(
+                    <p className='mb-[9.6px] text-[#000000B8]'>{items}</p>                   
+                ))}
+                    </div> 
+                ))}    
             </div>
             </div>
             <div>
             <div>
                 <p className='mb-[9.6px] font-semibold'>Account</p>
-                <p className='mb-[9.6px]'>Manage Your Apple Account</p>
-                <p className='mb-[9.6px]'>Apple Store Account</p>
-                <p className='mb-[9.6px]'>iCloud.com</p>
+                {headerElements.map((el)=>(
+                    <div>
+                    {el.account && el.account.map((items)=>(
+                    <p className='mb-[9.6px] text-[#000000B8]'>{items}</p>                   
+                ))}
+                    </div> 
+                ))}  
                 
             </div>
             <div className='pt-6'>
             <p className='mb-[9.6px] font-semibold'>Entertainment</p>
-                <p className='mb-[9.6px]'>Apple One</p>
-                <p className='mb-[9.6px]'>Apple TV+</p>
-                <p className='mb-[9.6px]'>Apple Music</p>
-                <p className='mb-[9.6px]'>Apple Arcade</p>
-                <p className='mb-[9.6px]'>Apple Fitness+</p>
-                <p className='mb-[9.6px]'>Apple News+</p>
-                <p className='mb-[9.6px]'>Apple Podcasts</p>
-                <p className='mb-[9.6px]'>Apple Books</p>
-                <p className='mb-[9.6px]'>Apple Store</p>
+            {headerElements.map((el)=>(
+                    <div>
+                    {el.entertainment && el.entertainment.map((items)=>(
+                    <p className='mb-[9.6px] text-[#000000B8]'>{items}</p>                   
+                ))}
+                    </div> 
+                ))}  
             </div>
             </div>
             
             <div>
                 <p className='mb-[9.6px] font-semibold'>Apple Store</p>
-                <p className='mb-[9.6px]'>Find a Store</p>
-                <p className='mb-[9.6px]'>Genius Bar</p>
-                <p className='mb-[9.6px]'>Today at Apple</p>
-                <p className='mb-[9.6px]'>Group Reservations</p>
-                <p className='mb-[9.6px]'>Apple Camp</p>
-                <p className='mb-[9.6px]'>Apple Store App</p>
-                <p className='mb-[9.6px]'>Certified Refurbished</p>
-                <p className='mb-[9.6px]'>Apple Trade In</p>
-                <p className='mb-[9.6px]'>Financing</p>
-                <p className='mb-[9.6px]'>Career Deals at Apple</p>
-                <p className='mb-[9.6px]'>Order Status</p>
-                <p className='mb-[9.6px]'>Shopping Help</p>
-            </div>
-            
+                {headerElements.map((el)=>(
+                    <div>
+                    {el.appleStore && el.appleStore.map((items)=>(
+                    <p className='mb-[9.6px] text-[#000000B8]'>{items}</p>                   
+                ))}
+                    </div> 
+                ))}  
+            </div>            
             <div>
             <div>
                 <p className='mb-[9.6px] font-semibold'>For Bussiness</p>
-                <p className='mb-[9.6px]'>Apple and Bussiness</p>
-                <p className='mb-[9.6px]'>Shop for Bussiness</p>               
+                {headerElements.map((el)=>(
+                    <div>
+                    {el.forBussiness && el.forBussiness.map((items)=>(
+                    <p className='mb-[9.6px] text-[#000000B8]'>{items}</p>                   
+                ))}
+                </div> 
+                ))}                
             </div>
             <div className='pt-6'>
             <p className='mb-[9.6px] font-semibold'>For Education</p>
-                <p className='mb-[9.6px]'>Apple and Education</p>
-                <p className='mb-[9.6px]'>Shop for K-12</p>
-                <p className='mb-[9.6px]'>Shop for College</p>                
+            {headerElements.map((el)=>(
+                    <div>
+                    {el.forEducation && el.forEducation.map((items)=>(
+                    <p className='mb-[9.6px] text-[#000000B8]'>{items}</p>                   
+                ))}
+                </div> 
+                ))}                 
             </div>
             <div className='pt-6'>
             <p className='mb-[9.6px] font-semibold'>For Healthcare</p>
-                <p className='mb-[9.6px]'>Apple in Healthcare</p>
-                <p className='mb-[9.6px]'>Health on Apple Watch</p>
-                <p className='mb-[9.6px]'>Health Records on iPhone and iPad</p>                
+            {headerElements.map((el)=>(
+                    <div>
+                    {el.forHealthcare && el.forHealthcare.map((items)=>(
+                    <p className='mb-[9.6px] text-[#000000B8]'>{items}</p>                   
+                ))}
+                </div> 
+                ))}                 
             </div>
             <div className='pt-6'>
             <p className='mb-[9.6px] font-semibold'>For Government</p>
-                <p className='mb-[9.6px]'>Shop for Government</p>
-                <p className='mb-[9.6px]'>Shop for Veterans and Military</p>
-                
+            {headerElements.map((el)=>(
+                    <div>
+                    {el.forGovernment && el.forGovernment.map((items)=>(
+                    <p className='mb-[9.6px] text-[#000000B8]'>{items}</p>                   
+                ))}
+                </div> 
+                ))}                  
             </div>
             </div>
             <div>
             <div>
                 <p className='mb-[9.6px] font-semibold'>Apple Values</p>
-                <p className='mb-[9.6px]'>Accessibility</p>
-                <p className='mb-[9.6px]'>Education</p>
-                <p className='mb-[9.6px]'>Enviornment</p>
-                <p className='mb-[9.6px]'>Inclusion and Diversity</p>
-                <p className='mb-[9.6px]'>Privacy</p>
-                <p className='mb-[9.6px]'>Racial Equity and Justice</p>
-                <p className='mb-[9.6px]'>Supply Chain</p>                
+                {headerElements.map((el)=>(
+                    <div>
+                    {el.appleValues && el.appleValues.map((items)=>(
+                    <p className='mb-[9.6px] text-[#000000B8]'>{items}</p>                   
+                ))}
+                    </div> 
+                ))}              
             </div>
             <div className='pt-6'>
             <p className='mb-[9.6px] font-semibold'>About Apple</p>
-                <p className='mb-[9.6px]'>Newsroom</p>
-                <p className='mb-[9.6px]'>Apple Leadership</p>
-                <p className='mb-[9.6px]'>Career Opportunities</p>
-                <p className='mb-[9.6px]'>Investors</p>
-                <p className='mb-[9.6px]'>Ethics & Compliance</p>
-                <p className='mb-[9.6px]'>Events</p>
-                <p className='mb-[9.6px]'>Contact Apple</p>
+            {headerElements.map((el)=>(
+                    <div>
+                    {el.aboutApple && el.aboutApple.map((items)=>(
+                    <p className='mb-[9.6px] text-[#000000B8]'>{items}</p>                   
+                ))}
+                    </div> 
+                ))}  
             </div>
             </div>
         </div>
-        <div className='pt-[37px] pb-[11px]'>
-        <div className='pb-[19px] mb-4 border-b border-[rgb(0,0,0,0.16)]'>
-        More ways to shop: <a href="#">Find an Apple Store</a> or <a href="#">other retailer</a></div>
+        <div className='pt-[37px] pb-6'>
+        <div className='pb-[19px] border-b border-[rgb(0,0,0,0.16)] text-[#000000B8]'>
+        More ways to shop: <a href="#" className='text-[#0066cc] underline'>Find an Apple Store</a> or <a href="#" className='text-[#0066cc] underline'>other retailer</a> near you. Or call 1-800-MY-APPLE.</div> 
+      </div>
+      <div className='flex items-center justify-between pb-[11px] leading-[26px] text-[#000000B8]'>
+        <div className='flex items-center'>
+        <p className='pr-[30px]'>Copyright © 2024 Apple Inc. All rights reserved.</p>
+        <div className='flex items-center -mb-0.5'>
+            <p className='pr-[9px] mr-[6px] border-r border-[rgb(0,0,0,0.16)] leading-[10px]'>Privacy Policy</p>
+            <p className='pr-[9px] mr-[6px] border-r border-[rgb(0,0,0,0.16)] leading-[10px]'>Terms of Use</p>
+            <p className='pr-[9px] mr-[6px] border-r border-[rgb(0,0,0,0.16)] leading-[10px]'>Sales and Refunds</p>
+            <p className='pr-[9px] mr-[6px] border-r border-[rgb(0,0,0,0.16)] leading-[10px]'>Legal</p>
+            <p className='pr-[9px] mr-[6px] border-r leading-[10px]'>Site Map</p>
+        </div>
+        </div>
+        <p>United States</p>
       </div>
       </div>
       

@@ -17,10 +17,9 @@ export default function NavItems({ items, message }) {
       </div>
       {message && (
         <div className="text-center flex items-center py-[9px] bg-[#F5F5F7] w-full">
-          <p className="max-w-[811px] mx-auto leading-[1.3333733333]">
+          <p className="max-w-[811px] mx-auto leading-[1.3333733333] font-SfProTextLight">
             {message}
-          </p>
-          {/* <a href="">Learn more</a> */}
+          </p>         
         </div>
       )}
     </div>
