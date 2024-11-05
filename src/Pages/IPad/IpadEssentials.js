@@ -1,14 +1,32 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Supernovae from '../../Components/assets/supernovae.png'
 import ArtOfFloral from '../../Components/assets/artOfFloral.png'
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
+
 export default function IpadEssentials() {
+
+  useEffect(()=>{
+  gsap.set(".ipadEssentialsTextAnima",{y:0, opacity:1})
+  gsap.from(".ipadEssentialsTextAnima",{
+    duration:0.8,
+    opacity:0,
+    y:40,
+    // stagger:0.2,
+    scrollTrigger:{
+    trigger:".iPadEssentialsTextAnima",      
+  } 
+  })
+})
+
   return (
     <div className='max-w-[1680px] mx-auto w-[87.5vw]'>
       <div className="pb-20 leading-[1.05]">
-        <p className="text-[56px] font-SfProDisplayMedium">iPad essentials.</p>
+        <p className="text-[56px] font-SfProDisplayMedium ipadEssentialsTextAnima">iPad essentials.</p>
       </div>
 
-    <div className='grid grid-cols-2 gap-5 relative mx-3'>
+    <div className='grid grid-cols-2 gap-5 relative mx-3 ipadEssentialsTextAnima'>
       <div className='bg-white rounded-[28px] flex flex-col items-center text-center justify-between px-8 pt-8'>
       <div className='pt-6 pb-12'>
         <p className='font-SfProDisplayMedium text-[28px] mb-0.5 font-semibold'>Apple Pencil</p>

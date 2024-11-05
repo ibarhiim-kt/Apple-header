@@ -92,7 +92,6 @@ export const AppleSliderContent = [
         sliderTitle:'Apple Intelligence',
         sliderDescription:'Personal, private, powerful.',
         img:AppleIntelligence
-
     },
     {
         sliderTitle:'Productivity',
@@ -107,12 +106,12 @@ export const AppleSliderContent = [
     {
         sliderTitle:'Learning',
         sliderDescription:'Your classroom can be anywhere.',
-        img:Learning      
+        img:Learning
     },
     {
         sliderTitle:'Entertainment',
         sliderDescription:'Kick back. Tune in. Game on.',
-        img:Entertainment     
+        img:Entertainment
     },
     {
         sliderTitle:'Apple Pencil',

@@ -29,7 +29,7 @@ function App() {
     </>
     
   } heroVideo={HeroVideo}/>
-      <AppleSlider title="Get To know iPad." items={AppleSliderContent}/>
+      <AppleSlider title="Get to know iPad." items={AppleSliderContent}/>
       <div className="bg-[#F5F5F7]">
       <ExploreLineup content={IPadModelComparison}/>
       <IpadEssentials/>

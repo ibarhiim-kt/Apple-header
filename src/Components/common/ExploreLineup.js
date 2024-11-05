@@ -3,6 +3,10 @@ import appleIntelligence from '../assets/appleIntelligencePng.png';
 import Slider from 'react-slick';
 import NextBtn from '../../Components/assets/nextButton.svg';
 import PreviousBtn from '../../Components/assets/previousButton.svg';
+import rightChivron from '../../Components/assets/rightChivron.svg'
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 export default function ExploreLineup({ content }) {
   const sliderRef = useRef(null);
@@ -36,7 +40,6 @@ export default function ExploreLineup({ content }) {
       const containerRect = containerRef.current.getBoundingClientRect();
       const buttonRect = buttonRef.current.getBoundingClientRect();
 
-      // Check if container has scrolled into view and set button sticky
       if (containerRect.top <= 150 && containerRect.bottom > buttonRect.height) {
         setIsSticky(true);
       } else {
@@ -48,12 +51,38 @@ export default function ExploreLineup({ content }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const contentRefs = useRef([]);
+  useEffect(()=>{
+    gsap.set(".exploreLineupAnima",{y:0, opacity:1})
+      gsap.from(".exploreLineupAnima",{
+        duration:0.8,
+        opacity:0,
+        y:40,
+        scrollTrigger:{
+        trigger:".exploreLineupAnima",      
+      } 
+      })
+      
+      contentRefs.current.forEach((content, index) => {   
+        gsap.set(content, { y: 0, opacity: 1 });   
+        gsap.from(content, {
+          duration: 1,
+          opacity: 0,
+          y: 50,
+          delay: index * 0.2,
+          scrollTrigger: {
+          trigger: ".exploreLineupAnima",
+          }
+        });
+      });
+    },[content])
   return (
     <div ref={containerRef} className='pt-[150px] py-64 font-SfProTextRegular text-[12px] text-[#1D1D1F] overflow-hidden'>
-      <div className="pb-20 max-w-[1680px] mx-auto w-[87.5vw] leading-[1.05] flex items-end justify-between">
+      <div className="pb-20 max-w-[1680px] mx-auto w-[87.5vw] leading-[1.05] flex items-end justify-between exploreLineupAnima">
         <p className="text-[56px] font-SfProDisplayMedium">Explore the lineup.</p>
-        <div>
+        <div className='flex item-center '>
           <a href="#" className='text-[#0066CC] font-SfProTextRegular text-[17px]'>Compare all models</a>
+          <img src={rightChivron} alt="" className="pl-[5px]" />
         </div>
       </div>
 
@@ -61,19 +90,28 @@ export default function ExploreLineup({ content }) {
         <div className='max-w-[1680px] w-[83vw]'>
           <Slider ref={sliderRef} {...settings}>
             {content.map((el, index) => (
-              <div key={index}>
+              <div key={index} ref={(el) => (contentRefs.current[index] = el)}>
                 <div className={`flex flex-col justify-center items-center text-center w-[372px] ${el.id > 0 ? 'ml-5' : ''}`}>
                   <img src={el.primaryImg} alt="iPad Pro" className='mb-10 h-[340px]'/>
                   <div className='flex items-center gap-[6px]'>
-                    <div className='h-[11px] w-[11px] bg-[#232C23] rounded-full'></div>
-                    <div className='h-[11px] w-[11px] bg-[#E3E4E5] rounded-full'></div>
+
+                  
+                    <div className={`${index === 1?'bg-[#6B696E]':index===2?'bg-[#6480A3]':index===3?'bg-[#6B696E]':'bg-[#232C23]'} h-[11px] w-[11px]  rounded-full`}></div>
+                    <div className={`${index === 1?'bg-[#D7E5E6]':index===2?'bg-[#DE6274]':index===3?'bg-[#D7E5E6]':'bg-[#E3E4E5]'} h-[11px] w-[11px]  rounded-full`}></div>
+                  
+                    <div className={`${index === 1?'bg-[#E3DEE9]':index===2?'bg-[#F0D95B]':index===3?'bg-[#E3DEE9]':'hidden]'} h-[11px] w-[11px]  rounded-full`}></div>
+                    <div className={`${index === 1?'bg-[#E5E0D8]':index===2?'bg-[#E3E4E5]':index===3?'bg-[#E5E0D8]':'hidden]'} h-[11px] w-[11px]  rounded-full`}></div>
+                
                   </div>
                   <p className='font-SfProDisplayMedium text-[28px] mt-14'>{el.name}</p>
                   <p className='pt-4 font-SfProTextRegular text-[17px] px-5 tracking-[-0.022em]'>{el.description}</p>
                   <p className='pt-3 font-SfProTextRegular text-[17px]'>{el.prices}</p>
-                  <div className='pt-[38px] pb-[54px] font-SfProTextRegular text-[17px] flex items-center border-b border-[red] w-full justify-center'>
+                  <div className='pt-[38px] pb-[54px] font-SfProTextRegular text-[17px] flex items-center border-b border-[gray] w-full justify-center'>
                     <p className='bg-[#0066cc] h-[43.6px] leading-[1.1764805882] flex items-center justify-center px-[22px] rounded-full text-white'>Learn more</p>
-                    <p className='text-[#0066cc] ml-4'>Buy</p>
+                    <div className='flex items-center'>
+                    <p className='text-[#0066cc] ml-8'>Buy</p>
+                    <img src={rightChivron} alt="" className='pl-[5px] w-[12.25px]'/>
+                    </div>
                   </div>
                   <div className='pt-[52px] flex flex-col gap-[44px] items-center'>
                     <div className='max-w-[186.14px] min-h-[170px] tracking-[-0.022em]'>

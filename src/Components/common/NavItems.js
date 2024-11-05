@@ -1,6 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 export default function NavItems({ items, message }) {
+
+  useEffect(()=>{
+  gsap.set(".navTextAnima",{y:0, opacity:1})
+    gsap.from(".navTextAnima",{
+      duration:0.8,
+      opacity:0,
+      y:-50,
+      scrollTrigger:{
+      trigger:".navTextAnima",      
+    } 
+    })
+  })
   return (
     <div className="flex flex-col items-center text-[12px]">
       <div className="max-w-5xl mx-auto">
@@ -16,10 +31,12 @@ export default function NavItems({ items, message }) {
         </div>
       </div>
       {message && (
-        <div className="text-center flex items-center py-[9px] bg-[#F5F5F7] w-full">
+        <div className="overflow-hidden w-full bg-white">
+        <div className="navTextAnima text-center flex items-center py-[9px] bg-[#F5F5F7] ">
           <p className="max-w-[811px] mx-auto leading-[1.3333733333] font-SfProTextLight">
             {message}
           </p>         
+        </div>
         </div>
       )}
     </div>
