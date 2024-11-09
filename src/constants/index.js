@@ -41,9 +41,10 @@ import personalizedIpad from '../../src/Components/assets/personalizedIpad.png'
 import shopLive from '../../src/Components/assets/shopLive.png'
 import personalSetup from '../../src/Components/assets/personalSetup.png'
 import shoppingExperience from '../../src/Components/assets/shoppingExperience.png'
-import significantIpadIphone from '../../src/Components/assets/significant_ipad_iphone.jpg'
+// import significantIpadIphone from '../../src/Components/assets/significant_ipad_iphone.jpg'
 import secondaryAccordionImg from '../Components/assets/secondaryAccordionImg.jpg'
 import tertiaryAccordionImg from '../Components/assets/tertiaryAccordionImg.jpg'
+import significantIpadIphone from '../Components/assets/significant_ipad_iphone2.jpg'
 
 export const AppleItems = [
     {
@@ -274,6 +275,7 @@ export const Significant = [
     {
         accordionTitle:"iPad and iPhone",
         description:"iPad is perfect for taking the content you capture on iPhone and bringing it to life on an immersive canvas. You can shoot videos and photos on your iPhone and use the large display of your iPad to edit, add animations, and more. You can also pick up wherever you left off with Handoff.",
+        // img:significantIpadIphone
         img:significantIpadIphone
     },
     {

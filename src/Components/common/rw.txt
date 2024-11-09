@@ -1,0 +1,68 @@
+import React, { useState } from 'react';
+import { useSpring, animated } from '@react-spring/web';
+import BottomChivron from '../assets/bottomChivron.svg';
+
+export default function SignificantOthers({ items }) {
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  // Define springs for animation without chaining
+  const getSpringProps = (index) => useSpring({
+    opacity: activeIndex === index ? 1 : 0,
+    transform: activeIndex === index ? 'translateY(0)' : 'translateY(10px)',
+  });
+
+  return (
+    <div className="py-[150px] max-w-[1680px] mx-auto w-[87.5vw]">
+      <div className="pb-20 text-[56px] font-SfProDisplayMedium max-w-[528px]">
+        Significant others
+      </div>
+      <div className="bg-[#F5F5F7] flex rounded-[28px] overflow-hidden">
+        <div className="min-w-[590px] flex flex-col items-center justify-center">
+          {items.map((el, index) => (
+            <div
+              key={index}
+              className={`mb-6 pb-6 ${index === 0 ? 'mt-6 pt-6' : ''} ${index > 1 ? 'border-0' : 'border-b'} border-[#E3E3E7] w-[350px]`}
+            >
+              <div
+                className="flex items-center justify-between"
+                onClick={() => setActiveIndex(index === activeIndex ? null : index)}
+              >
+                <p className="font-SfProDisplayMedium text-[28px] leading-[1.1428571429] font-semibold">
+                  {el.accordionTitle}
+                </p>
+                <img
+                  src={BottomChivron}
+                  alt="arrow"
+                  className={`h-[27px] w-[27px] transition-transform duration-300 ${activeIndex === index ? 'rotate-180' : ''}`}
+                />
+              </div>
+
+              {activeIndex === index && (
+                <animated.p
+                  style={getSpringProps(index)} // Use simplified spring logic
+                  className="max-w-[323px] font-SfProTextLight -tracking-[0.022em] leading-[1.4705882353] text-[17px] pt-[13.6px]"
+                >
+                  {el.description}
+                </animated.p>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <div>
+          {items.map((el, index) => (
+            <div key={index}>
+              {activeIndex === index && (
+                <img
+                  src={el.img}
+                  alt="image"
+                  className="max-w-[1090px] min-h-[754px] object-cover"
+                />
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}

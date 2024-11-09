@@ -14,7 +14,8 @@ import rightChivron from '../../Components/assets/rightChivron.svg'
 
 function App() {
   return (
-    <div>    
+    <div>  
+        
       <div className="bg-[#fafafc]">
      <NavItems
           items={AppleItems}

@@ -42,12 +42,12 @@
     font-family: 'SF-Pro-Icons-Regular';
     src: url('../public/fonts/SF-Pro-Icons-Regular/SF-Pro-Icons-Regular.woff');
   }
-.watchImage{    
+/* .watchImage{    
     height: 100vh;
     background-image: url('./Components/assets/apple-watch.jpg');
     background-size: cover;
     background-position: center;    
-  }
+  } */
 
 .blur{
     background: rgba(0, 0, 0, .4);
@@ -64,3 +64,9 @@
 .slick-list {
   overflow: visible; 
 }
+
+.accordionc{
+overflow: hidden;
+  transition: max-height 0.6s ease;
+}
+

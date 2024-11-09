@@ -13,7 +13,7 @@ export default function Hero({ title, description, heroVideo }) {
     if (videoRef.current) {
       gsap.fromTo(
         videoRef.current,
-        { width: '100vw',
+        { width: '98.9vw',
           borderRadius:'0px'
          },
         {
@@ -41,7 +41,8 @@ export default function Hero({ title, description, heroVideo }) {
   }, []);
 
   return (
-    <div className="pt-[90px] overflow-hidden mb-[150px]">
+    
+    <div className="relative pt-[90px]  mb-[150px]">
       <div className="heroTextAnima max-w-[1680px] mx-auto w-[87.5vw] flex justify-between items-center pb-20 leading-[1.05] heroGsap">
         <p className="text-[80px] font-SfProDisplayRegular font-semibold">
           {title}
@@ -50,22 +51,22 @@ export default function Hero({ title, description, heroVideo }) {
           {description}
         </p>
       </div>
+       
       <div
-        className="heroTextAnima h-[80vh] max-h-[1260px] min-h-[680px] max-w-[1920px] mx-auto overflow-hidden relative "  ref={videoRef}
-      >
+        className="heroTextAnima h-[80vh] relative  max-h-[1260px] min-h-[680px] max-w-[1920px] mx-auto" ref={videoRef}
+      >      
+      <div className='z-20 sticky top-[700px] ml-auto mr-10 w-[36px] h-[36px] bg-[#e8e8ed] rounded-full flex items-center justify-center'>  
+          <img src={PlayButton} alt="play button" className=' w-[20px] h-[20px]'/>
+      </div>
         <video
           src={heroVideo}
           muted
           playsInline
           loop
           autoPlay
-          className="w-full h-full object-cover max-w-[1920px] mx-auto"
-          
-        ></video>    
-        <div className='absolute bottom-10 right-10 w-[36px] h-[36px] bg-[#e8e8ed] rounded-full flex items-center justify-center'>
-          <img src={PlayButton} alt="play button" className='w-[20px] h-[20px]'/>
-        </div>    
-      </div>      
-    </div>
+          className="w-full h-full object-cover max-w-[1920px] mx-auto"          
+        ></video>                      
+      </div>            
+    </div>    
   );
 }
